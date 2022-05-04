@@ -27,8 +27,4 @@ public final class MobTowerDefence extends JavaPlugin {
 
         game = new Game(this, config);
     }
-
-    @Override
-    public void onDisable() {
-    }
 }

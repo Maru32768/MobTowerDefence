@@ -1,17 +1,39 @@
 package net.kunmc.lab.mobtowerdefence.game;
 
-class Durability {
-    private final int durability;
+import java.util.HashSet;
+import java.util.Set;
 
-    Durability(int durability) {
+class Durability {
+    private static final int MIN = 0;
+    private double durability;
+    private final Set<DurabilityObserver> observers = new HashSet<>();
+
+    Durability(double durability) {
         if (durability < 1) {
-            throw new IllegalArgumentException("durability must be greater than or equal to 1.");
+            throw new IllegalArgumentException("initial durability must be greater than or equal to 1.");
         }
 
         this.durability = durability;
     }
 
-    Durability minus(int n) {
-        return new Durability(durability - n);
+    void addObserver(DurabilityObserver observer) {
+        observers.add(observer);
+    }
+
+    void reduce(double n) {
+        durability = Math.max(durability - n, MIN);
+        notifyObservers();
+    }
+
+    boolean isZero() {
+        return durability == MIN;
+    }
+
+    double remaining() {
+        return durability;
+    }
+
+    private void notifyObservers() {
+        observers.forEach(x -> x.update(this));
     }
 }
