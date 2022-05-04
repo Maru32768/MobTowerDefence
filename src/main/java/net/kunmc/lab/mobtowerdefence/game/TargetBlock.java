@@ -43,7 +43,7 @@ class TargetBlock implements Listener {
         loc.add(0, 0.5, 0);
 
         return world().spawn(loc, ArmorStand.class, CreatureSpawnEvent.SpawnReason.CUSTOM, x -> {
-            x.setVisible(true);
+            x.setVisible(false);
             x.setInvulnerable(false);
             x.setMarker(false);
             x.setGravity(false);
