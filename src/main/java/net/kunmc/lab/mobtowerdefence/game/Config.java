@@ -1,4 +1,4 @@
-package net.kunmc.lab.mobtowerdefence;
+package net.kunmc.lab.mobtowerdefence.game;
 
 import net.kunmc.lab.configlib.BaseConfig;
 import net.kunmc.lab.configlib.value.IntegerValue;

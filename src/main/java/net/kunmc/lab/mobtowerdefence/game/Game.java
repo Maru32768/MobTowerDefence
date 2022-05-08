@@ -1,7 +1,6 @@
 package net.kunmc.lab.mobtowerdefence.game;
 
 import com.destroystokyo.paper.event.server.ServerTickEndEvent;
-import net.kunmc.lab.mobtowerdefence.Config;
 import net.kunmc.lab.mobtowerdefence.game.feedback.*;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.title.Title;

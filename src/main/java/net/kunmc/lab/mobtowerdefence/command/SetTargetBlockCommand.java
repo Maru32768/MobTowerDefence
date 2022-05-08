@@ -2,8 +2,8 @@ package net.kunmc.lab.mobtowerdefence.command;
 
 import net.kunmc.lab.commandlib.Command;
 import net.kunmc.lab.commandlib.CommandContext;
-import net.kunmc.lab.mobtowerdefence.Config;
 import net.kunmc.lab.mobtowerdefence.MobTowerDefence;
+import net.kunmc.lab.mobtowerdefence.game.Config;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;

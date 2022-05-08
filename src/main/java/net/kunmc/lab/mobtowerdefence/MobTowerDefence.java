@@ -7,6 +7,7 @@ import net.kunmc.lab.configlib.ConfigCommandBuilder;
 import net.kunmc.lab.mobtowerdefence.command.SetTargetBlockCommand;
 import net.kunmc.lab.mobtowerdefence.command.StartCommand;
 import net.kunmc.lab.mobtowerdefence.command.StopCommand;
+import net.kunmc.lab.mobtowerdefence.game.Config;
 import net.kunmc.lab.mobtowerdefence.game.Game;
 import org.bukkit.plugin.java.JavaPlugin;
 
