@@ -1,6 +1,7 @@
 package net.kunmc.lab.mobtowerdefence.game;
 
 import net.kunmc.lab.configlib.BaseConfig;
+import net.kunmc.lab.configlib.value.DoubleValue;
 import net.kunmc.lab.configlib.value.IntegerValue;
 import net.kunmc.lab.configlib.value.LocationValue;
 import net.kunmc.lab.configlib.value.MaterialValue;
@@ -12,6 +13,7 @@ public class Config extends BaseConfig {
     public final MaterialValue targetBlockType = new MaterialValue(Material.BEACON, true);
     public final LocationValue targetBlockLocation = new LocationValue();
     public final IntegerValue durability = new IntegerValue(1200, 1, Integer.MAX_VALUE);
+    public final DoubleValue distanceOfReleasingTargetedPlayer = new DoubleValue(30.0);
 
     public Config(@NotNull Plugin plugin) {
         super(plugin);

@@ -105,4 +105,8 @@ class TargetBlock implements Listener {
     public boolean isTargetBlock(Entity e) {
         return e == armorStand;
     }
+
+    public double distance(Location other) {
+        return targetBlockLocation.distance(other);
+    }
 }

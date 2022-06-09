@@ -6,7 +6,6 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.title.Title;
 import org.bukkit.Bukkit;
 import org.bukkit.GameRule;
-import org.bukkit.entity.Mob;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.HandlerList;
@@ -44,7 +43,7 @@ public class Game implements Listener {
         isRunning = true;
 
         targetBlock = TargetBlock.create(plugin, config.targetBlockType.value(), config.targetBlockLocation.value(), new Durability(config.durability.value()));
-        taskList.add(SettingMobTargetTask.runNewTask(plugin, targetBlock));
+        taskList.add(SettingMobTargetTask.runNewTask(plugin, targetBlock, config.distanceOfReleasingTargetedPlayer.value()));
 
         bossBar = DurabilityBossBar.create(targetBlock.durability());
         Bukkit.getOnlinePlayers().forEach(bossBar::addPlayer);
@@ -72,8 +71,6 @@ public class Game implements Listener {
 
     @EventHandler
     private void onTick(ServerTickEndEvent e) {
-        targetBlock.world().getEntitiesByClass(Mob.class).forEach(targetBlock::handleAsTarget);
-
         if (targetBlock.durability().isZero()) {
             Component title = Component.translatable(targetBlock.materialName()).append(Component.text("が破壊された!"));
             Bukkit.getOnlinePlayers().forEach(p -> {

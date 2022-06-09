@@ -30,7 +30,7 @@ class DurabilityBossBar implements DurabilityObserver {
         bossBar.setVisible(false);
         bossBar.removeAll();
     }
-   
+
     @Override
     public void update(Durability durability) {
         bossBar.setProgress(durability.remaining() / initialDurability);
