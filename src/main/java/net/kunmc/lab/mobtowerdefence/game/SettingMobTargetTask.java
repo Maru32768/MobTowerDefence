@@ -14,10 +14,11 @@ import org.bukkit.scheduler.BukkitTask;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 class SettingMobTargetTask extends BukkitRunnable implements Listener {
     private final TargetBlock targetBlock;
-    private final Map<Mob, Player> mobToPlayerMap = new HashMap<>();
+    private final Map<Mob, Player> mobToPlayerMap = new ConcurrentHashMap<>();
     private final double distanceOfReleasingTargetedPlayer;
 
     public static BukkitTask runNewTask(Plugin plugin, TargetBlock targetBlock, double distanceOfReleasingTargetedPlayer) {

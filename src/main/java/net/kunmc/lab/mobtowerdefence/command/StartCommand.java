@@ -7,10 +7,9 @@ import net.kunmc.lab.mobtowerdefence.MobTowerDefence;
 public class StartCommand extends Command {
     public StartCommand() {
         super("start");
-    }
 
-    @Override
-    protected void execute(CommandContext ctx) {
-        MobTowerDefence.instance.game.start().sendFeedBack(ctx.getSender());
+        execute(ctx -> {
+            MobTowerDefence.instance.game.start().sendFeedBack(ctx.getSender());
+        });
     }
 }
